@@ -88,6 +88,19 @@
    }
 
   </style>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("downloadBtn").addEventListener("click", function () {
+        html2canvas(document.body).then(function (canvas) {
+          var link = document.createElement("a");
+          link.download = "page.png";
+          link.href = canvas.toDataURL();
+          link.click();
+        });
+      });
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 </head>
 
 <body>
